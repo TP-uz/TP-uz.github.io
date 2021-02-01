@@ -1,38 +1,98 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>CountDown</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <!-- <div class="background-website"></div> -->
-        <div class="contain-tree-flower">
-            <img class="tree-flower" src="imgs/hoa-dao2.png" />
-            <img class="lentern" src="imgs/long-den2.png" />
-            <img class="lentern" src="imgs/long-den3.png" />
-            <img class="lentern" src="imgs/long-den4.png" />
-        </div>
-        <div class="contain-tree-flower">
-            <img class="tree-flower" src="imgs/hoa-mai.png" />
-            <img class="lentern" src="imgs/long-den2.png" />
-            <img class="lentern" src="imgs/long-den3.png" />
-            <img class="lentern" src="imgs/long-den4.png" />
-        </div>
-        <div class="sky"></div>
-        <img class="family" src="imgs/family.png" />
-        <img class="family" src="imgs/family-goi-banh.png" />
-        <img class="textTet" src="imgs/tet.png" />
-        <img class="number" src="imgs/2_1.png" />
-        <img class="number" src="imgs/0_1.png" />
-        <img class="number" src="imgs/2_2.png" />
-        <img class="number" src="imgs/0_2.png" />
-        <img class="slogan" src="imgs/slogan.png" />
 
-    </body>
-    <script src="js/displayAll.js"></script>
-    <script src="js/objectFly/configFly.js"></script>
-    <script src="js/objectFly/flowerFly.js"></script>
-    <script src="js/objectFly/lenternFly.js"></script>
+<head>
+    <title>CountDown</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+    <style>
+        .container-custom {
+            width: 50%;
+            height: 200px;
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            text-align: center;
+            font-family: 'Lobster', cursive;
+
+
+
+
+
+        }
+
+        .doi {
+            background-color: red;
+            width: 100px;
+            color: #fdcb6e;
+            width: 15%;
+            margin: auto;
+        }
+
+        .con {
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="background-website"></div> -->
+    <div class="contain-tree-flower">
+        <img class="tree-flower" src="imgs/hoa-dao2.png" />
+        <img class="lentern" src="imgs/long-den2.png" />
+        <img class="lentern" src="imgs/long-den3.png" />
+        <img class="lentern" src="imgs/long-den4.png" />
+    </div>
+    <div class="contain-tree-flower">
+        <img class="tree-flower" src="imgs/hoa-mai.png" />
+        <img class="lentern" src="imgs/long-den2.png" />
+        <img class="lentern" src="imgs/long-den3.png" />
+        <img class="lentern" src="imgs/long-den4.png" />
+    </div>
+    <div class="sky"></div>
+    <img class="family" src="imgs/family.png" />
+    <img class="family" src="imgs/family-goi-banh.png" />
+    <img class="textTet" src="imgs/tet.png" />
+    <img class="number" src="imgs/2_1.png" />
+    <img class="number" src="imgs/0_1.png" />
+    <img class="number" src="imgs/2_2.png" />
+    <img class="number" src="imgs/0_2.png" />
+    <img class="slogan" src="imgs/slogan.png" />
+    <!-- phatcode -->
+    <div class="container-custom">
+        <h1>
+            Trần Tấn Phát
+        </h1>
+        
+        <p style="font-sizesize">
+            Chúc Mừng Năm Mới
+        </p>
+        <div class="con">
+            <div class="doi">
+                <p>
+                    Ðắp <br> gốc <br> cây <br> cao, <br> Tết <br> đến <br> thắp <br> hương <br> thơm <br> đèn <br> sáng
+                </p>
+            </div>
+            <div class="doi">
+                <p>Khơi <br> nguồn <br> nước <br> mát, <br> Xuân <br> về <br> dâng <br> trái <br> ngọt <br> hoa <br>
+                    thơm.</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+<script src="js/displayAll.js"></script>
+<script src="js/objectFly/configFly.js"></script>
+<script src="js/objectFly/flowerFly.js"></script>
+<script src="js/objectFly/lenternFly.js"></script>
+
 </html>
