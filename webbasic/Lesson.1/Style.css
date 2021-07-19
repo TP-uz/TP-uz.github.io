@@ -1,0 +1,21 @@
+h1 {
+    color: blueviolet;
+    background-color: crimson;
+}
+
+.OMG {
+    color: darkgoldenrod;
+    background: linear-gradient(to right, #005aa7, #fffde4);
+}
+
+body {
+    text-align: center;
+    background: linear-gradient(to right, #005aa7, #fffde4);
+    ;
+
+}
+.pic{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
