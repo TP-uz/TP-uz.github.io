@@ -1,10 +1,10 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-header{
+header {
     width: 100vw;
     height: 100vh;
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), url(img/hero.jpg);
@@ -12,29 +12,34 @@ header{
     background-position: center;
     font-family: 'Lato', sans-serif;
 }
-nav{
+
+nav {
     width: 100%;
     height: 150px;
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
 }
-nav .logo{
+
+nav .logo {
     margin-left: 150px;
     display: flex;
-    align-items:center;
+    align-items: center;
 }
-nav ul{
+
+nav ul {
     margin-right: 150px;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 45%; 
+    width: 45%;
     list-style: none;
 }
+
 nav ul li {
-    font-size:25px;
-    font-weight:300;
+    font-size: 25px;
+    font-weight: 300;
 }
+
 /* nav ul li a{
 
     transition: color 1s, border 0.5s
@@ -44,56 +49,63 @@ nav ul li a:hover{
     border-bottom: 2px solid orange;
     transition: color 0.75s, border 0.25s
 } */
-a{
+a {
     color: white;
     text-decoration: none !important;
 }
-nav .logo img{
+
+nav .logo img {
     width: 100px;
     height: 100px;
 }
-.nav_intro{
+
+.nav_intro {
     width: 50%;
-    position:absolute;
-    left:15%;
+    position: absolute;
+    left: 15%;
     top: 40%;
 }
+
 .nav_intro p {
-    color:white;
+    color: white;
     font-size: 48px;
     white-space: 2px;
-    letter-spacing:2px;
+    letter-spacing: 2px;
     margin-bottom: 30px;
 }
+
 .nav_intro a {
     padding: 10px 15px;
     border-radius: 30px;
-    font-size:20px;
+    font-size: 20px;
     border: 2px solid orange;
     transition: background 0.25s, color 0.5s
 }
-.nav_intro a:nth-child(3){
+.nav_intro a:nth-child(3) {
     margin-left: 25px;
     color: orange;
 }
-.nav_intro a:nth-child(2){
+
+.nav_intro a:nth-child(2) {
     background: orange;
     color: white !important;
 
 }
-.nav_intro a:nth-child(2):hover{
+
+.nav_intro a:nth-child(2):hover {
     background: transparent;
     color: orange;
     transition: background 0.25s, color 0.5s
 }
-.nav_intro a:nth-child(3):hover{
+
+.nav_intro a:nth-child(3):hover {
     color: white;
     background: orange;
     transition: background 0.25s, color 0.5s
 }
 
 
-.title{
+.title {
     font-size: 38px;
     color: gray;
     font-weight: 300;
@@ -103,66 +115,258 @@ nav .logo img{
     white-space: 0.5px;
     letter-spacing: 0.5px;
 }
-.title::after{
+
+.title::after {
     content: " ";
     width: 120px;
-    height:2px;
-    background:orange;
+    height: 2px;
+    background: orange;
     display: block;
     margin: 20px auto;
     border-radius: 15px;
 }
-.intro p:nth-child(2){
+
+.intro p:nth-child(2) {
     color: gray;
     font-size: 20px;
     text-align: center;
 }
-.part_2 .detail{
+
+.part_2 .detail {
     margin-top: 50px;
     color: gray;
     opacity: 0.9;
 }
-.part_2 .detail .row .item{
+
+.part_2 .detail .row .item {
     padding: 15px 25px;
 }
-.part_2 .detail .row .item i{
+
+.part_2 .detail .row .item i {
     color: orange;
     font-size: 50px;
     margin-bottom: 15px;
 }
-.part_2 .detail .row .item div{
+
+.part_2 .detail .row .item div {
     text-transform: uppercase;
     font-size: 22px;
     margin-bottom: 5px;
-    
+
 }
-.part_2 .detail .row .item p{
+
+.part_2 .detail .row .item p {
 
     font-size: 18px;
 }
 
 
-.part_3 ul{
+.part_3 ul {
     list-style: none;
     padding: 0px !important;
 }
-.part_3 ul li{
+
+.part_3 ul li {
     width: 25%;
-    float:left ;
+    float: left;
     overflow: hidden;
 }
-.part_3 ul li img{
+
+.part_3 ul li img {
     width: 100%;
-    height:auto;
+    height: auto;
     transform: scale(1.15);
     opacity: 0.9;
     transition: transform 0.5s, opacity 0.5s;
     cursor: pointer;
 
 }
-.part_3 ul li img:hover{
+
+.part_3 ul li img:hover {
     transform: scale(1);
     opacity: 1;
     transition: transform 0.5s, opacity 0.5s;
+}
+
+.part_4 .detail {
+    display: flex;
+    
+    justify-content: space-between;
+}
+
+.part_4 .detail .p4_left {
+    width: 46%;
+    
+}
+
+.part_4 .detail .p4_left img {
+    width: 45%;
+    float: right;
+
+}
+
+.part_4 .detail .p4_right {
+    width: 46%;
+   
+    margin-top: 45px;
+}
+.p4_right .p4_right_item{
+    
+    width: 80%;
+    display: flex;
+    margin:30px 5px;
+
+}
+.p4_right .p4_right_item p{
+    width: 80%;
+    margin-left: 20px;
+    color:gray;
+    font-size:20px;
+}
+.p4_right .p4_right_item .number{
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    border:2px solid orange;
+    color:orange;
+    font-size:20px
+}
+.p4_right_item img{
+    width: 150px;
+    margin:5px 15px;
+}
+.part_6{
+    background:whitesmoke;
+}
+.part_6 .detail{
+    display: flex;
+    justify-content: space-around;
+}
+.part_6 .detail .cart{
+    background: #fff;
+    width: 320px;
+    padding:20px;
+    color:gray;
+
+}
+.part_6 .detail .cart #Head{
+    text-transform: uppercase;
+    font-size: 18px;
+    margin-bottom: 0;
+}
+.part_6 .detail .cart #Price{
+    color:orange;
+    font-size: 45px;
+    font-weight: 100;
+}
+.part_6 .detail .cart #Price{
+    color:orange;
+    font-weight: 100;
+}
+.part_6 .detail .cart .Text i{
+    color:orange;
+}
+.part_6 .detail .cart .button1{
+    text-align: center;
+}
+.part_6 .detail .cart .button2{
+    text-align: center;
+}
+.part_6 .detail .cart .button3{
+    text-align: center;
+}
+.button1 a {
+    padding: 10px 15px;
+    border-radius: 30px;
+    font-size: 20px;
+    border: 2px solid orange;
+    transition: background 0.25s, color 0.5s
+}
+.button1 a:nth-child(1) {
+    color: white;
+    background: orange;
+
+}
+
+.button1 a:nth-child(1):hover {
+    background: transparent;
+    color: grey;
+    transition: background 0.25s, color 0.5s
+
+}
+.button2 a {
+    padding: 10px 15px;
+    border-radius: 30px;
+    font-size: 20px;
+    border: 2px solid orange;
+    transition: background 0.25s, color 0.5s
+}
+.button2 a:nth-child(1) {
+    color: orange;
+    background: transparent;
+
+}
+
+.button2 a:nth-child(1):hover {
+    background: orange;
+    color: white;
+    transition: background 0.25s, color 0.5s
+
+}
+.button3 a {
+    padding: 10px 15px;
+    border-radius: 30px;
+    font-size: 20px;
+    border: 2px solid orange;
+    transition: background 0.25s, color 0.5s
+}
+.button3 a:nth-child(1) {
+    color: orange;
+    background: transparent;
+
+}
+
+.button3 a:nth-child(1):hover {
+    background: orange;
+    color: white;
+    transition: background 0.25s, color 0.5s
+
+}
+.part_5{
+    background:white;
+}
+.part_5 .detail{
+    display: flex;
+    justify-content: space-around;
+}
+.part_5 .detail .cart{
+    background: #fff;
+    width: 320px;
+    padding:20px;
+    color:gray;
+
+}
+.button3 a {
+    padding: 10px 15px;
+    border-radius: 30px;
+    font-size: 20px;
+    border: 2px solid orange;
+    transition: background 0.25s, color 0.5s
+}
+.button3 a:nth-child(1) {
+    color: orange;
+    background: transparent;
+
+}
+
+.contact{
+    background: transparent;
+    color: orange;
+}
+.part_5 .container .detail .text{
+    color: orange;
 }
 
