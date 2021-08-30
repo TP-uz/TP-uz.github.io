@@ -76,7 +76,6 @@
         </div>
 
     </section>
-
     <section class="part_3">
         <ul>
             <li><img src="./img/1.jpg" alt=""></li>
@@ -129,7 +128,7 @@
             </div>
             <div class="detail">
                 <div class="cart">
-                    <li><img src="./img/lisbon-3.jpg" width="280" alt=""></li>
+                    <div class="image"><img src="./img/lisbon-3.jpg" width="280" alt=""></div>
                     <div class="div">
                         <span id="Price">Lisbon</span>
                     </div>
@@ -141,7 +140,7 @@
                     </div>
                 </div>
                 <div class="cart">
-                    <li><img src="./img/san-francisco.jpg" width="280" alt=""></li>
+                    <div class="image"><img src="./img/san-francisco.jpg" width="280" alt=""></div>
                     <div class="div">
                         <span id="Price">San Francisco</span>
                     </div>
@@ -153,7 +152,7 @@
                     </div>
                 </div>
                 <div class="cart">
-                    <li><img src="./img/berlin.jpg" width="280" alt=""></li>
+                    <div class="image"><img src="./img/berlin.jpg" width="280" alt=""></div>
                     <div class="div">
                         <span id="Price">Berlin</span>
                     </div>
@@ -165,7 +164,7 @@
                     </div>
                 </div>
                 <div class="cart">
-                    <li><img src="./img/london.jpg" width="280" alt=""></li>
+                    <div class="image"><img src="./img/london.jpg" width="280" alt=""></div>
                     <div class="div">
                         <span id="Price">London</span>
                     </div>
@@ -256,10 +255,49 @@
 
 
     </section>
+    <section class="part_7">
+            <div class="intro">
+                <p class="title">Contact Us</p>
+            </div>
+            <div class="detail">
+                <div class="container contact-form">
+                    <div class="contact-image">
+                        <img src="./img/logo.png" alt="rocket_contact"/>
+                    </div>
+                    <form id="contact">
+                        <h3>Drop Us a Message</h3>
+                       <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="txtName" class="form-control" placeholder="Your Name *" value="" required />
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" name="txtEmail" class="form-control" placeholder="Your Email *" value="" required />
+                                </div>
+                                <div class="form-group">
+                                    <input type="number" name="txtPhone" class="form-control" placeholder="Your Phone Number *" value="" required />
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" name="btnSubmit" class="btnContact" value="Send Message" required />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <textarea name="txtMsg" class="form-control" placeholder="Your Message *" style="width: 100%; height: 150px;"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+        </div>
+            </div>
+    </section>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
+    <script src="./index.js"></script>
 </body>
 
 </html>
