@@ -1,90 +1,126 @@
 <!DOCTYPE html>
 <!-- Created By CodingNepal -->
 <html lang="en" dir="ltr">
-   <head>
-      <meta charset="utf-8">
-      <title>Sign In</title>
-      <link rel="stylesheet" href="style.css">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   </head>
-   <body>
-      <div class="wrapper">
-         <div class="title-text">
-            <div class="title login">
-               Login Form
-            </div>
-            <div class="title signup">
-               Signup Form
-            </div>
+
+<head>
+   <meta charset="utf-8">
+   <title>Sign In</title>
+   <link rel="stylesheet" href="style.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+   <div class="wrapper">
+      <div class="title-text">
+         <div class="title login">
+            Login Form
          </div>
-         <div class="form-container">
-            <div class="slide-controls">
-               <input type="radio" name="slide" id="login" checked>
-               <input type="radio" name="slide" id="signup">
-               <label for="login" class="slide login">Login</label>
-               <label for="signup" class="slide signup">Signup</label>
-               <div class="slider-tab"></div>
-            </div>
-            <div class="form-inner">
-               <form id="sign_form" action="#" class="login">
-                  <div class="field">
-                     <input type="email" name="email" placeholder="Email Address" required>
-                  </div>
-                  <div class="field">
-                     <input type="password" name="password" placeholder="Password" required>
-                  </div>
-                  <label class="container">Show your password
-                     <input type="checkbox" checked="checked">
-                     <span class="checkmark"></span>
-                   </label>
-                  <div class="pass-link">
-                     <a href="#">Forgot password?</a>
-                  </div>
-                  <div class="field btn">
-                     <div class="btn-layer"></div>
-                     <input type="submit" value="Login">
-                  </div>
-                  <div class="signup-link">
-                     Not a member? <a href="">Signup now</a>
-                  </div>
-               </form>
-               <form action="#" class="signup">
-                  <div class="field">
-                     <input type="text" placeholder="Email Address" required>
-                  </div>
-                  <div class="field">
-                     <input type="password" placeholder="Password" required>
-                  </div>
-                  <div class="field">
-                     <input type="password" placeholder="Confirm password" required>
-                  </div>
-                  <div class="field btn">
-                     <div class="btn-layer"></div>
-                     <input type="submit" value="Signup">
-                  </div>
-               </form>
-            </div>
+         <div class="title signup">
+            Signup Form
          </div>
       </div>
-      <script>
-         const loginText = document.querySelector(".title-text .login");
-         const loginForm = document.querySelector("form.login");
-         const loginBtn = document.querySelector("label.login");
-         const signupBtn = document.querySelector("label.signup");
-         const signupLink = document.querySelector("form .signup-link a");
-         signupBtn.onclick = (()=>{
-           loginForm.style.marginLeft = "-50%";
-           loginText.style.marginLeft = "-50%";
-         });
-         loginBtn.onclick = (()=>{
-           loginForm.style.marginLeft = "0%";
-           loginText.style.marginLeft = "0%";
-         });
-         signupLink.onclick = (()=>{
-           signupBtn.click();
-           return false;
-         });
-      </script>
-      <script src="./auth.js"></script>
-   </body>
+      <div class="form-container">
+         <div class="slide-controls">
+            <input type="radio" name="slide" id="login" checked>
+            <input type="radio" name="slide" id="signup">
+            <label for="login" class="slide login">Login</label>
+            <label for="signup" class="slide signup">Signup</label>
+            <div class="slider-tab"></div>
+         </div>
+         <div class="form-inner">
+            <form id="sign_form" class="login">
+               <div class="field">
+                  <input type="email" name="email" placeholder="Email Address" required>
+                  <div class="error" id="siEmail"></div>
+               </div>
+               <div class="field">
+                  <input type="password" id="pw" name="password" placeholder="Password" required>
+                  <div class="error" id="siPassword"></div>
+               </div>
+               <label class="container">Show your password
+                  <input onclick="showHidePasswordForSignIn()" type="checkbox">
+                  <span class="checkmark"></span>
+               </label>
+               <div class="pass-link">
+                  <a href="#">Forgot password?</a>
+               </div>
+               <div class="field btn">
+                  <div class="btn-layer"></div>
+                  <input type="submit" value="Login">
+               </div>
+               <div class="signup-link">
+                  Not a member? <a href="">Signup now</a>
+               </div>
+            </form>
+            <form id="signup_">
+               <div class="field">
+                  <input type="text" name="email" placeholder="Email Address" required>
+                  <div class="error" id="suEmail"></div>
+               </div>
+
+               <div class="field">
+                  <input type="password" id="pwu" name="password" placeholder="Password" required>
+                  <div class="error" id="suPassword"></div>
+               </div>
+               <div class="field">
+                  <input type="password" id="cfpwu" name="cfpassword" placeholder="Confirm password" required>
+                  <div class="error" id="sucfPassword"></div>
+               </div>
+               <label class="container">Show your password
+                  <input onclick="showHidePasswordForSignUp()" type="checkbox">
+                  <span class="checkmark"></span>
+               </label>
+               <div class="field btn">
+                  <div class="btn-layer"></div>
+                  <input type="submit" value="Signup">
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+   <script>
+      const loginText = document.querySelector(".title-text .login");
+      const loginForm = document.querySelector("form.login");
+      const loginBtn = document.querySelector("label.login");
+      const signupBtn = document.querySelector("label.signup");
+      const signupLink = document.querySelector("form .signup-link a");
+      signupBtn.onclick = (() => {
+         loginForm.style.marginLeft = "-50%";
+         loginText.style.marginLeft = "-50%";
+      });
+      loginBtn.onclick = (() => {
+         loginForm.style.marginLeft = "0%";
+         loginText.style.marginLeft = "0%";
+      });
+      signupLink.onclick = (() => {
+         signupBtn.click();
+         return false;
+      });
+   </script>
+   <!-- The core Firebase JS SDK is always required and must be listed first -->
+   <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+
+   <!-- TODO: Add SDKs for Firebase products that you want to use
+          https://firebase.google.com/docs/web/setup#available-libraries -->
+   <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   <script src="./auth.js"></script>
+   <script type="module">
+      const firebaseConfig = {
+           apiKey: "AIzaSyDPf2XjglKptWcYSonMMpOmWy5H4XA3J00",
+           authDomain: "tpchat-b9008.firebaseapp.com",
+           projectId: "tpchat-b9008",
+           storageBucket: "tpchat-b9008.appspot.com",
+           messagingSenderId: "480398285792",
+           appId: "1:480398285792:web:8253228b5d10495ffd6985",
+           measurementId: "G-KFC6W4D5MK"
+         };
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+   </script>
+</body>
+
 </html>
