@@ -64,7 +64,6 @@ let renderChat = (data, email) => {
   chat_name.innerHTML = data.name
   chat_id.innerHTML = data.id
   dom.innerHTML = ''
-  console.log(data);
   for (let i = 0; i < data.messages.length; i++) {
     let chatClass = "message";
     if (data.messages[i].owner == email) {
@@ -147,7 +146,6 @@ let Swel = (content) => {
 }
 let renderListUsers = (data, email) => {
   let dom = document.querySelector(".userlist")
-  console.log(dom);
   dom.innerHTML = ""
   for (let i = 0; i < data.length; i++) {
     let html = `<div id="c${data[i].id}" class="user">
@@ -210,14 +208,14 @@ let handleConversationChange = async (email) => {
       }
 
       let docChanges = snapshot.docChanges();
+      console.log("llllllllllllllllllllllllllllll");
+      console.log(docChanges);
       for (let docChange of docChanges) {
         let type = docChange.type;
         let conversationDoc = docChange.doc;
         let conversation = getDataFromDoc(conversationDoc);
-        console.log("llllllllllllll");
 
         if (type == "modified") {
-          console.log("xxxxxx");
           renderChat(conversation, currentEmail);
         }
         if (type == "added") {
