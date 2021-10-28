@@ -5,40 +5,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TP Chat</title>
     <link rel="stylesheet" href="./style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.css" rel="stylesheet">
 </head>
 
 <body>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
 
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-          https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-        const firebaseConfig = {
-            apiKey: "AIzaSyDPf2XjglKptWcYSonMMpOmWy5H4XA3J00",
-            authDomain: "tpchat-b9008.firebaseapp.com",
-            projectId: "tpchat-b9008",
-            storageBucket: "tpchat-b9008.appspot.com",
-            messagingSenderId: "480398285792",
-            appId: "1:480398285792:web:8253228b5d10495ffd6985",
-            measurementId: "G-KFC6W4D5MK"
-        };
-        firebase.initializeApp(firebaseConfig);
-        firebase.analytics();
-    </script>
-    <div class="container">
+    <div class="container_">
         <div class="left">
-            <div class="item">
+            <div data-toggle="modal" data-target="#myModal" class="item">
                 <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_f6zszxrn.json"
                     background="transparent" speed="1" style="width: 150px; height: 150px;" loop autoplay>
                 </lottie-player>
+
             </div>
             <div class="item">
 
@@ -62,7 +42,7 @@
             <h2>Message</h2>
         </div>
         <div class="userlist">
-            <img src="https://lh3.googleusercontent.com/proxy/7iEDwSIY5HzJtDbBTaWtN7OSrZqgPLtI8TD7VKX98jeLGfCCjSlTOqFqSVgnkBDqBwZegiv9eGEJ49Xf8pagxjJO8QVW-Ykzr2VuG7MH3nG47ZUjQL-c4mM"
+            <img src="img/loading.gif" alt="">
                 alt="">
 
         </div>
@@ -70,8 +50,9 @@
     <div class="right">
         <div class="info">
             <div class="name">
-                <h3 id="currentName">Đăng Duy</h3>
-                <p id="currentEmail">tpgamingthe2@gmail.com</p>
+                <h3 id="currentName"><img src="img/loading.gif" alt="">
+                    <h3>
+                        <p id="currentEmail"><img src="img/loading.gif" alt=""></p>
             </div>
             <span id="currentId">Message</span>
             <h4 id="real_time"></h4>
@@ -80,17 +61,17 @@
             <div class="chat_content">
                 <div class="message">
                     <div class="message_info">
-                        <span>Tan phat @gm</span>
-                        <span id="real_time">sssssss</span>
+                        <span></span>
+                        <span id="real_time"></span>
                     </div>
-                    <span class="content_m">Hello</span>
+                    <span class="content_m"></span>
                 </div>
                 <div class="message onwer">
                     <div class="message_info">
-                        <span style="margin-right: 15px;">Tan phat @gm</span>
-                        <span id="real_time">sssssssssssss</span>
+                        <span style="margin-right: 15px;"></span>
+                        <span id="real_time"></span>
                     </div>
-                    <span class="content_m">Hello</span>
+                    <span class="content_m"></span>
                 </div>
 
             </div>
@@ -108,7 +89,53 @@
     </div>
 
     </div>
+    <!-- Button to Open the Modal -->
 
+
+    <!-- The Modal -->
+    <form action="">
+        <div class="modal" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Tạo cuộc trò chuyện mới</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+    </form>
+
+
+    <!-- Modal body -->
+    <form id="formAddNewConversationBtn">
+        <div class="modal-body">
+            <div class="form-group">
+                <label for="email">Tên Cuộc Trò Chuyện</label>
+                <input type="text" class="form-control" placeholder="Nhập tên cuộc trò chuyện" name="name" required />
+            </div>
+            <div class="form-group">
+                <label for="pwd">Email của những người bạn</label>
+                <input type="email" class="form-control" placeholder="Nhận email của người bạn" name="email" required />
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlFile1">Ảnh của cuộc trò chuyện</label>
+                <input type="file" id="photo" class="form-control-file" id="exampleFormControlFile1" />
+            </div>
+        </div>
+    </form>
+
+
+
+    <!-- Modal footer -->
+    <div class="modal-footer">
+        <button type="button" class="btn btn-success" id="btn_addNewCon">Tạo cuộc trò chuyên</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+    </div>
+
+
+    </div>
+    </div>
+    </div>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script>
         const checkbox = document.getElementById('checkbox');
@@ -117,9 +144,43 @@
             document.body.classList.toggle('dark');
         })
     </script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+           https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyDPf2XjglKptWcYSonMMpOmWy5H4XA3J00",
+            authDomain: "tpchat-b9008.firebaseapp.com",
+            projectId: "tpchat-b9008",
+            storageBucket: "tpchat-b9008.appspot.com",
+            messagingSenderId: "480398285792",
+            appId: "1:480398285792:web:8253228b5d10495ffd6985",
+            measurementId: "G-KFC6W4D5MK"
+        };
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
     <script src="./chat.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

@@ -200,7 +200,7 @@ let handleConversationChange = async (email) => {
   firebase
     .firestore()
     .collection("chat")
-    .where("users", "array-contains", currentEmail)
+    .where("user", "array-contains", currentEmail)
     .onSnapshot(function (snapshot) {
       if (skipRun) {
         skipRun = false;
@@ -208,7 +208,6 @@ let handleConversationChange = async (email) => {
       }
 
       let docChanges = snapshot.docChanges();
-      console.log("llllllllllllllllllllllllllllll");
       console.log(docChanges);
       for (let docChange of docChanges) {
         let type = docChange.type;
@@ -226,3 +225,51 @@ let handleConversationChange = async (email) => {
       }
     });
 };
+let formNewConversation = document.querySelector("#formAddNewConversationBtn")
+let btn_addnew = document.querySelector("#btn_addNewCon")
+btn_addnew.addEventListener("click", () => {
+  let name = formNewConversation.name.value;
+  let email = formNewConversation.email.value
+
+  if(name && email){
+    addNewConverstion(email, name)
+  }
+
+  
+
+})
+
+let addNewConverstion = async (email, chatName) => {
+  let currenEmail = document.querySelector("#currentEmail").innerHTML
+  let userArray = [currenEmail, email]
+  // code up ảnh lên firebase storage
+  const ref = await firebase.storage().ref();
+  const file = document.querySelector("#photo").files[0];
+
+  const metadata = {
+    contentType: file.type,
+  };
+  const name = file.name;
+  const imgUploaded = ref.child(name).put(file, metadata);
+
+  imgUploaded
+    .then((snapshot) => snapshot.ref.getDownloadURL())
+    .then((url) => {
+      let data = {
+        avatar: url,
+        createAt: getRealTime(),
+        messages: [],
+        name: chatName,
+        user: userArray,
+      };
+      addConversation(data)
+    })
+    .catch((err) => {
+      alert(err);
+    });
+}
+
+let addConversation = async (data) => {
+  await firebase.firestore().collection("chat").add(data);
+  alert("Thêm Thành Công")
+}
