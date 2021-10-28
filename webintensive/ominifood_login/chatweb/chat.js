@@ -149,8 +149,8 @@ let renderListUsers = (data, email) => {
   dom.innerHTML = ""
   for (let i = 0; i < data.length; i++) {
     let html = `<div id="c${data[i].id}" class="user">
-    <span id="nameAndAvatar"><img src="https://picsum.photos/536/354"></i>${data[i].name}</span>
-    <h4 id="real_timer">...<h4>
+    <span id="nameAndAvatar"><img src="${data[i].avatar}"></i>${data[i].name}</span>
+    <h4 id="real_timer">${data[i].createAt}<h4>
 </div>`;
     dom.innerHTML += html
   }
@@ -230,6 +230,11 @@ let btn_addnew = document.querySelector("#btn_addNewCon")
 btn_addnew.addEventListener("click", () => {
   let name = formNewConversation.name.value;
   let email = formNewConversation.email.value
+  // email = "Nguyencuong TanPhat" => ["Nguyễn Cường", "Tân Phat"]\
+  let str =(email);
+  const emailVar = str.split(" ");
+  console.log(emailVar)
+
 
   if(name && email){
     addNewConverstion(email, name)
